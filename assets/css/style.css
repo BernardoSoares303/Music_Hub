@@ -1,0 +1,210 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+/* BODY */
+body {
+  background-color: #1F1F1F;
+  color: white;
+}
+
+/* HEADER */
+header {
+  background-color: #0D0D0D;
+}
+
+/* TÍTULOS */
+h1, h2, h3, h4 {
+  color: #9D4EDD;
+}
+
+/* BOTÃO */
+.btn-custom {
+  background-color: #7B2CBF;
+  color: white;
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: #5A189A;
+}
+
+/* CARD */
+.card {
+  background-color: #2a2a2a;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* IMAGEM DOS CARDS */
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+/* SLIDER */
+.carousel img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* TEXTO SLIDER */
+.carousel-caption {
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* SOBRE */
+.sobre {
+  background-color: #2a2a2a;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #0D0D0D;
+  color: white;
+}
+
+.titulo-footer {
+  color: white;
+  font-weight: bold;
+}
+
+.subtitulo {
+  color: #9D4EDD;
+  margin-bottom: 10px;
+}
+
+/* LINHA */
+.footer hr {
+  border: 1px solid #9D4EDD;
+}
+
+/* REDES SOCIAIS */
+.redes a {
+  color: #9D4EDD;
+  font-size: 20px;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.redes a:hover {
+  color: #7B2CBF;
+}
+
+/*  DETALHES */
+
+/* evita layout quebrando */
+#img, #info, #fotos {
+  min-height: 100px;
+}
+
+/* imagem principal */
+#img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* texto detalhe */
+#info {
+  padding: 10px;
+}
+
+#info p {
+  font-size: 1rem;
+}
+
+/* galeria */
+#fotos img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#fotos p {
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* roxo */
+.text-purple {
+  color: #9D4EDD;
+}
+
+/* EVITA BUG GLOBAL */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========================= */
+/* 📱 RESPONSIVO             */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  /* cards */
+  .card img {
+    height: 200px;
+  }
+
+  /* slider */
+  .carousel img {
+    height: 200px;
+  }
+
+  /* detalhe */
+  #img img {
+    height: 200px;
+  }
+
+  /* centralizar texto */
+  #info {
+    text-align: center;
+  }
+
+  /* galeria */
+  #fotos img {
+    height: 120px;
+  }
+}
+
+/* EXTRA MOBILE (TELAS PEQUENAS) */
+@media (max-width: 480px) {
+
+  .card img {
+    height: 180px;
+  }
+
+  .carousel img {
+    height: 180px;
+  }
+
+  #img img {
+    height: 180px;
+  }
+
+  #fotos img {
+    height: 100px;
+  }
+}
+

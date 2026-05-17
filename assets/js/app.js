@@ -24,7 +24,7 @@ const dados = {
       genero: "Pop",
       ano: 2017,
       destaque: true,
-      imagem: "assets/img/Shape_of_You.jpg",
+      imagem: "assets/img/Shape_Of_You.jpg",
       fotos: [
         { titulo: "Show", imagem: "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/05/Ed-Sheeran-se-apresenta-na-Loop-Tour.png?w=596" }
       ]
@@ -80,7 +80,7 @@ const dados = {
       genero: "Trap/Rap",
       ano: 2020,
       destaque: false,
-      imagem: "assets/img/faca_dinheiro.jpg",
+      imagem: "assets/img/Faca_Dinheiro.jpg",
       fotos: [
         {
           titulo: "Show ao vivo",

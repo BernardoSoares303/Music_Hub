@@ -24,7 +24,7 @@ const dados = {
       genero: "Pop",
       ano: 2017,
       destaque: true,
-      imagem: "assets/img/Shape_Of_You.jpg",
+      imagem: "assets/img/Shape_of_You.jpg",
       fotos: [
         { titulo: "Show", imagem: "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/05/Ed-Sheeran-se-apresenta-na-Loop-Tour.png?w=596" }
       ]
@@ -80,7 +80,7 @@ const dados = {
       genero: "Trap/Rap",
       ano: 2020,
       destaque: false,
-      imagem: "assets/img/Faca_Dinheiro.jpg",
+      imagem: "assets/img/faca_dinheiro.jpg",
       fotos: [
         {
           titulo: "Show ao vivo",
@@ -89,6 +89,108 @@ const dados = {
         {
           titulo: "Performance no palco",
           imagem: "https://i.ytimg.com/vi/_sKulk_RrqU/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLAD-gbRfuOn4M0pxwzNIqImpQzwrw"
+        }
+      ]
+    },
+    {
+      id: 7,
+      nome: "Anunciação",
+      artista: "Alceu Valença",
+      descricao: "Clássico da MPB brasileira",
+      conteudo: "Uma das músicas mais conhecidas da música popular brasileira, marcada pelo ritmo nordestino e letra marcante.",
+      genero: "MPB",
+      ano: 1983,
+      destaque: false,
+      imagem: "assets/img/Anunciacao.jpg",
+      fotos: [
+        {
+          titulo: "Show ao vivo",
+          imagem: "https://upload.wikimedia.org/wikipedia/commons/6/63/Alceu_Valen%C3%A7a.jpg"
+        }
+      ]
+    },
+    {
+      id: 8,
+      nome: "505",
+      artista: "Arctic Monkeys",
+      descricao: "Indie rock melancólico",
+      conteudo: "Faixa muito popular da banda Arctic Monkeys, conhecida pela atmosfera emocional e instrumental crescente.",
+      genero: "Indie Rock",
+      ano: 2007,
+      destaque: false,
+      imagem: "assets/img/505.jpg",
+      fotos: [
+        {
+          titulo: "Banda ao vivo",
+          imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0z3x2r8n0Z2vX9R8z9qQYv3iA0f7j5l2Nlw&s"
+        }
+      ]
+    },
+    {
+      id: 9,
+      nome: "Billie Jean",
+      artista: "Michael Jackson",
+      descricao: "Hit lendário do pop",
+      conteudo: "Uma das músicas mais famosas de Michael Jackson, com linha de baixo icônica e grande impacto cultural.",
+      genero: "Pop",
+      ano: 1982,
+      destaque: false,
+      imagem: "assets/img/Billie_Jean.jpg",
+      fotos: [
+        {
+          titulo: "Performance clássica",
+          imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLF0P7z9I8Gf4L2A5L7h0y9M1o8P8YQ3dKcA&s"
+        }
+      ]
+    },
+    {
+      id: 10,
+      nome: "Chorar Faz Bem",
+      artista: "Big Rush",
+      descricao: "Plug brasileiro com leve toque de piseiro",
+      conteudo: "Música que mistura elementos do plug com influências do piseiro, demonstrando extrema versatilidade do artista.",
+      genero: "Plug",
+      ano: 2026,
+      destaque: true,
+      imagem: "assets/img/Chorar_Faz_Bem.jpg",
+      fotos: [
+        {
+          titulo: "Show do Big Rush",
+          imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRuW4W0f4PjzJ4x0zK9A4Q7Y6m5Y2cW7eD7g&s"
+        }
+      ]
+    },
+    {
+      id: 11,
+      nome: "Get Lucky",
+      artista: "Daft Punk",
+      descricao: "Sucesso eletrônico mundial",
+      conteudo: "Uma mistura de disco e música eletrônica que marcou os anos 2010.",
+      genero: "Eletrônica",
+      ano: 2013,
+      destaque: false,
+      imagem: "assets/img/Get_Lucky.jpg",
+      fotos: [
+        {
+          titulo: "Daft Punk",
+          imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7cL8v9w1N4xX0h2B6P8fQ2k7n6v5m4t3s9A&s"
+        }
+      ]
+    },
+    {
+      id: 12,
+      nome: "Tempo Perdido",
+      artista: "Legião Urbana",
+      descricao: "Rock brasileiro clássico",
+      conteudo: "Uma das músicas mais importantes do rock nacional brasileiro.",
+      genero: "Rock",
+      ano: 1986,
+      destaque: false,
+      imagem: "assets/img/Tempo_Perdido.jpg",
+      fotos: [
+        {
+          titulo: "Legião Urbana",
+          imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4d2w3k6n9m8v7x5z1a0b2c3d4e5f6g7h8iQ&s"
         }
       ]
     }

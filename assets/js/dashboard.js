@@ -1,42 +1,82 @@
-const generos = {};
+async function carregarGrafico() {
 
-dados.musicas.forEach(musica => {
+    try {
 
-    if (generos[musica.genero]) {
-        generos[musica.genero]++;
-    } else {
-        generos[musica.genero] = 1;
-    }
+        // BUSCA MUSICAS
+        const response = await fetch(
+            "http://localhost:3000/musicas"
+        );
 
-});
+        const musicas = await response.json();
 
-const labels = Object.keys(generos);
-const valores = Object.values(generos);
+        // OBJETO DOS GENEROS
+        const generos = {};
 
-const ctx = document.getElementById("graficoGenero");
+        // CONTA GENEROS
+        musicas.forEach(musica => {
 
-new Chart(ctx, {
-    type: "pie",
+            if (generos[musica.genero]) {
 
-    data: {
-        labels: labels,
+                generos[musica.genero]++;
 
-        datasets: [{
-            label: "Músicas por gênero",
-            data: valores,
-            borderWidth: 1
-        }]
-    },
+            } else {
 
-    options: {
-        responsive: true,
+                generos[musica.genero] = 1;
+            }
+        });
 
-        plugins: {
-            legend: {
-                labels: {
-                    color: "white"
+        // LABELS
+        const labels = Object.keys(generos);
+
+        // VALORES
+        const valores = Object.values(generos);
+
+        // CANVAS
+        const ctx = document.getElementById("graficoGenero");
+
+        // GRAFICO
+        new Chart(ctx, {
+
+            type: "pie",
+
+            data: {
+
+                labels: labels,
+
+                datasets: [{
+
+                    label: "Músicas por gênero",
+
+                    data: valores,
+
+                    borderWidth: 1
+                }]
+            },
+
+            options: {
+
+                responsive: true,
+
+                plugins: {
+
+                    legend: {
+
+                        labels: {
+
+                            color: "white"
+                        }
+                    }
                 }
             }
-        }
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+        alert("Erro ao carregar gráfico");
     }
-});
+}
+
+// EXECUTA
+carregarGrafico();

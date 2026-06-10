@@ -197,24 +197,18 @@ img {
 /* FAVORITO */
 
 .favorito {
-
   font-size: 1.5rem;
-
   cursor: pointer;
-
   transition: 0.3s;
 }
 
 .favorito:hover {
-
   transform: scale(1.2);
 }
 
 .text-danger {
-
   color: #ff3b3b !important;
 }
-
 
 /* ========================= */
 /* 📱 RESPONSIVO             */

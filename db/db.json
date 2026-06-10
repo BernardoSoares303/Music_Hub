@@ -218,9 +218,8 @@
       "email": "admin@email.com",
       "admin": true,
       "favoritos": [
-        1,
-        2,
         3,
+        10,
         6
       ]
     },

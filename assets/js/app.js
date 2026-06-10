@@ -17,13 +17,9 @@ async function carregarIndex() {
 
 async function toggleFavorito(idMusica) {
 
-  // PEGA USUARIO
-
   let usuario = JSON.parse(
     sessionStorage.getItem("usuarioLogado")
   );
-
-  // SEM LOGIN
 
   if (!usuario) {
 
@@ -39,11 +35,10 @@ async function toggleFavorito(idMusica) {
     usuario.favoritos = [];
   }
 
-  // VERIFICA FAVORITO
+  idMusica = Number(idMusica);
 
-  const jaExiste = usuario.favoritos.includes(
-    Number(idMusica)
-  );
+  const jaExiste =
+    usuario.favoritos.includes(idMusica);
 
   // REMOVE
 
@@ -51,16 +46,14 @@ async function toggleFavorito(idMusica) {
 
     usuario.favoritos =
       usuario.favoritos.filter(
-        id => id !== Number(idMusica)
+        id => id !== idMusica
       );
 
   } else {
 
     // ADICIONA
 
-    usuario.favoritos.push(
-      Number(idMusica)
-    );
+    usuario.favoritos.push(idMusica);
   }
 
   // ATUALIZA JSON SERVER
@@ -96,58 +89,102 @@ async function toggleFavorito(idMusica) {
 // CARDS
 // =========================
 
-async function carregarCards(filtro = "") {
+async function carregarCards() {
 
-  const lista = document.getElementById("lista");
+  const lista =
+    document.getElementById("lista");
 
-  const response = await fetch(API);
+  const pesquisa =
+    document.getElementById("pesquisa")
+      ?.value.toLowerCase() || "";
 
-  const musicas = await response.json();
+  // BUSCA MUSICAS
+
+  const response =
+    await fetch(API);
+
+  let musicas =
+    await response.json();
+
+  // FILTRO PESQUISA
+
+  musicas = musicas.filter(m =>
+    m.nome.toLowerCase()
+      .includes(pesquisa)
+  );
+
+  // USUARIO
 
   const usuario = JSON.parse(
     sessionStorage.getItem("usuarioLogado")
   );
 
-  // FILTRO
+  // CASO NÃO ENCONTRE
 
-  const musicasFiltradas = musicas.filter(m =>
-    m.nome.toLowerCase().includes(filtro.toLowerCase())
-  );
+  if (musicas.length === 0) {
 
-  lista.innerHTML = musicasFiltradas.map(m => {
+    lista.innerHTML = `
+
+      <p class="text-center text-light">
+        Nenhuma música encontrada.
+      </p>
+
+    `;
+
+    return;
+  }
+
+  // RENDERIZA
+
+  lista.innerHTML = musicas.map(m => {
 
     const favorito =
-      usuario?.favoritos?.includes(m.id);
+      usuario?.favoritos?.includes(
+        Number(m.id)
+      );
 
     return `
 
-      <div class="col-lg-4 col-md-6 mb-3">
+      <div class="col-lg-4 col-md-6 mb-4">
 
         <div class="card bg-card text-light h-100">
 
-          <img src="${m.imagem}" class="card-img-top">
+          <img 
+            src="${m.imagem}" 
+            class="card-img-top"
+          >
 
           <div class="card-body d-flex flex-column">
 
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-center mb-2">
 
-              <h5>${m.nome}</h5>
+              <h5 class="m-0">
+                ${m.nome}
+              </h5>
 
-              ${usuario
-                ?
-                `<i 
-                  class="bi ${favorito ? 'bi-heart-fill text-danger' : 'bi-heart'} favorito"
+              ${usuario ? `
+
+                <i 
+                  class="bi ${favorito
+          ? 'bi-heart-fill text-danger'
+          : 'bi-heart'
+        } favorito"
+
                   onclick="toggleFavorito(${m.id})"
-                ></i>`
-                :
-                ''
-              }
+                ></i>
+
+              ` : ""}
 
             </div>
 
-            <p>${m.descricao}</p>
+            <p>
+              ${m.descricao}
+            </p>
 
-            <a href="detalhes.html?id=${m.id}" class="btn btn-custom w-100 mt-auto">
+            <a 
+              href="detalhes.html?id=${m.id}" 
+              class="btn btn-custom w-100 mt-auto"
+            >
               Ver mais
             </a>
 
@@ -158,20 +195,8 @@ async function carregarCards(filtro = "") {
       </div>
 
     `;
+
   }).join("");
-
-  // CASO NÃO ENCONTRE
-
-  if (musicasFiltradas.length === 0) {
-
-    lista.innerHTML = `
-
-      <p class="text-center text-light">
-        Nenhuma música encontrada.
-      </p>
-
-    `;
-  }
 }
 
 // =========================
@@ -180,25 +205,22 @@ async function carregarCards(filtro = "") {
 
 async function carregarDestaques() {
 
-  const slider = document.getElementById("slider");
+  const slider =
+    document.getElementById("slider");
 
-  // BUSCA
+  const response =
+    await fetch(API);
 
-  const response = await fetch(API);
-
-  const musicas = await response.json();
-
-  // FILTRA
+  const musicas =
+    await response.json();
 
   const destaques =
     musicas.filter(m => m.destaque);
 
-  // RENDERIZA
-
   slider.innerHTML = `
 
     <div 
-      id="carousel" 
+      id="carousel"
       class="carousel slide"
     >
 
@@ -206,12 +228,11 @@ async function carregarDestaques() {
 
         ${destaques.map((m, i) => `
 
-          <div class="carousel-item ${
-            i === 0 ? 'active' : ''
-          }">
+          <div class="carousel-item ${i === 0 ? 'active' : ''
+    }">
 
             <img 
-              src="${m.imagem}" 
+              src="${m.imagem}"
               class="d-block w-100"
             >
 
@@ -229,8 +250,6 @@ async function carregarDestaques() {
 
       </div>
 
-      <!-- BOTAO ANTERIOR -->
-
       <button
         class="carousel-control-prev"
         type="button"
@@ -241,8 +260,6 @@ async function carregarDestaques() {
         <span class="carousel-control-prev-icon"></span>
 
       </button>
-
-      <!-- BOTAO PROXIMO -->
 
       <button
         class="carousel-control-next"
@@ -272,21 +289,15 @@ async function carregarDetalhe() {
 
   const id = params.get("id");
 
-  // BUSCA MUSICA
-
   const response =
     await fetch(`${API}/${id}`);
 
   const musica =
     await response.json();
 
-  // PEGA USUARIO
-
   const usuario = JSON.parse(
     sessionStorage.getItem("usuarioLogado")
   );
-
-  // VERIFICA FAVORITO
 
   const favorito =
     usuario?.favoritos?.includes(
@@ -314,15 +325,18 @@ async function carregarDetalhe() {
         ${musica.nome}
       </h2>
 
-      <i 
-        class="bi ${
-          favorito
-            ? 'bi-heart-fill text-danger'
-            : 'bi-heart'
-        } favorito"
+      ${usuario ? `
 
-        onclick="toggleFavorito(${musica.id})"
-      ></i>
+        <i 
+          class="bi ${favorito
+        ? 'bi-heart-fill text-danger'
+        : 'bi-heart'
+      } favorito"
+
+          onclick="toggleFavorito(${musica.id})"
+        ></i>
+
+      ` : ""}
 
     </div>
 
@@ -375,11 +389,11 @@ async function carregarDetalhe() {
     `).join("");
 }
 
+// =========================
+// PESQUISA
+// =========================
+
 function pesquisarMusica() {
 
-  const texto = document
-    .getElementById("pesquisa")
-    .value;
-
-  carregarCards(texto);
+  carregarCards();
 }

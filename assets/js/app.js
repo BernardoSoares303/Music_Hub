@@ -96,70 +96,58 @@ async function toggleFavorito(idMusica) {
 // CARDS
 // =========================
 
-async function carregarCards() {
+async function carregarCards(filtro = "") {
 
   const lista = document.getElementById("lista");
-
-  // BUSCA MUSICAS
 
   const response = await fetch(API);
 
   const musicas = await response.json();
 
-  // PEGA USUARIO
-
   const usuario = JSON.parse(
     sessionStorage.getItem("usuarioLogado")
   );
 
-  // RENDERIZA
+  // FILTRO
 
-  lista.innerHTML = musicas.map(m => {
+  const musicasFiltradas = musicas.filter(m =>
+    m.nome.toLowerCase().includes(filtro.toLowerCase())
+  );
+
+  lista.innerHTML = musicasFiltradas.map(m => {
 
     const favorito =
-      usuario?.favoritos?.includes(
-        Number(m.id)
-      );
+      usuario?.favoritos?.includes(m.id);
 
     return `
 
-      <div class="col-md-4 mb-3">
+      <div class="col-lg-4 col-md-6 mb-3">
 
         <div class="card bg-card text-light h-100">
 
-          <img 
-            src="${m.imagem}" 
-            class="card-img-top"
-          >
+          <img src="${m.imagem}" class="card-img-top">
 
           <div class="card-body d-flex flex-column">
 
-            <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="d-flex justify-content-between align-items-center">
 
-              <h5 class="m-0">
-                ${m.nome}
-              </h5>
+              <h5>${m.nome}</h5>
 
-              <i 
-                class="bi ${
-                  favorito
-                    ? 'bi-heart-fill text-danger'
-                    : 'bi-heart'
-                } favorito"
-
-                onclick="toggleFavorito(${m.id})"
-              ></i>
+              ${usuario
+                ?
+                `<i 
+                  class="bi ${favorito ? 'bi-heart-fill text-danger' : 'bi-heart'} favorito"
+                  onclick="toggleFavorito(${m.id})"
+                ></i>`
+                :
+                ''
+              }
 
             </div>
 
-            <p>
-              ${m.descricao}
-            </p>
+            <p>${m.descricao}</p>
 
-            <a 
-              href="detalhes.html?id=${m.id}" 
-              class="btn btn-custom w-100 mt-auto"
-            >
+            <a href="detalhes.html?id=${m.id}" class="btn btn-custom w-100 mt-auto">
               Ver mais
             </a>
 
@@ -168,8 +156,22 @@ async function carregarCards() {
         </div>
 
       </div>
+
     `;
   }).join("");
+
+  // CASO NÃO ENCONTRE
+
+  if (musicasFiltradas.length === 0) {
+
+    lista.innerHTML = `
+
+      <p class="text-center text-light">
+        Nenhuma música encontrada.
+      </p>
+
+    `;
+  }
 }
 
 // =========================
@@ -371,4 +373,13 @@ async function carregarDetalhe() {
       </div>
 
     `).join("");
+}
+
+function pesquisarMusica() {
+
+  const texto = document
+    .getElementById("pesquisa")
+    .value;
+
+  carregarCards(texto);
 }

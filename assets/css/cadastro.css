@@ -31,15 +31,15 @@ body {
 }
 
 /* ========================= */
-/* BOX LOGIN */
+/* BOX CADASTRO */
 /* ========================= */
 
-.login-box {
+.cadastro-box {
 
   width: 100%;
-  max-width: 420px;
+  max-width: 500px;
 
-  background-color: #202020;
+  background-color: #2a2a2a;
 
   padding: 40px;
 
@@ -52,7 +52,7 @@ body {
 /* TITULO */
 /* ========================= */
 
-.login-box h2 {
+.cadastro-box h2 {
 
   color: #9D4EDD;
 
@@ -99,7 +99,7 @@ label {
   transition: 0.3s;
 }
 
-/* TEXTO PLACEHOLDER */
+/* PLACEHOLDER */
 
 .form-control::placeholder {
 
@@ -119,6 +119,18 @@ label {
   color: white !important;
 }
 
+/* REMOVE FUNDO BRANCO AUTOFILL */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+
+  -webkit-text-fill-color: white;
+
+  -webkit-box-shadow: 0 0 0px 1000px #1F1F1F inset;
+
+  transition: background-color 5000s ease-in-out 0s;
+}
 
 /* ========================= */
 /* BOTÃO */
@@ -189,12 +201,12 @@ p {
 
 @media (max-width: 480px) {
 
-  .login-box {
+  .cadastro-box {
 
     padding: 25px;
   }
 
-  .login-box h2 {
+  .cadastro-box h2 {
 
     font-size: 1.7rem;
   }

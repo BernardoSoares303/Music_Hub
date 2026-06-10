@@ -1,13 +1,32 @@
 {
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "Administrador",
       "email": "admin@gmail.com",
       "login": "admin",
       "senha": "senha123",
       "admin": true,
       "favoritos": []
+    },
+    {
+      "nome": "Bernardo Soares",
+      "email": "bbnado34@gmail.com",
+      "login": "bernardo",
+      "senha": "b123",
+      "admin": false,
+      "favoritos": [],
+      "id": "WC-XXS5aeUA"
+    },
+    {
+      "nome": "XD",
+      "email": "1@1",
+      "login": "admin",
+      "senha": "d",
+      "admin": false,
+      "favoritos": [],
+      "id": "2V6ZYjnRRnM"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

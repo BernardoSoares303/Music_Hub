@@ -1,0 +1,201 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+/* ========================= */
+/* BODY */
+/* ========================= */
+
+body {
+
+  background-color: #424242 !important;
+
+  color: white;
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+/* ========================= */
+/* BOX LOGIN */
+/* ========================= */
+
+.login-box {
+
+  width: 100%;
+  max-width: 420px;
+
+  background-color: #202020;
+
+  padding: 40px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* ========================= */
+/* TITULO */
+/* ========================= */
+
+.login-box h2 {
+
+  color: #9D4EDD;
+
+  text-align: center;
+
+  margin-bottom: 30px;
+
+  font-size: 2.2rem;
+}
+
+/* ========================= */
+/* LABEL */
+/* ========================= */
+
+label {
+
+  display: block;
+
+  margin-top: 15px;
+
+  margin-bottom: 5px;
+
+  color: white;
+
+  font-size: 1rem;
+}
+
+/* ========================= */
+/* INPUTS */
+/* ========================= */
+
+.form-control {
+
+  background-color: #1F1F1F !important;
+
+  border: 1px solid #444 !important;
+
+  color: white !important;
+
+  border-radius: 10px !important;
+
+  padding: 12px !important;
+
+  transition: 0.3s;
+}
+
+/* TEXTO PLACEHOLDER */
+
+.form-control::placeholder {
+
+  color: #bdbdbd !important;
+}
+
+/* INPUT FOCADO */
+
+.form-control:focus {
+
+  border-color: #9D4EDD !important;
+
+  box-shadow: 0 0 10px rgba(157, 78, 221, 0.4) !important;
+
+  background-color: #1F1F1F !important;
+
+  color: white !important;
+}
+
+
+/* ========================= */
+/* BOTÃO */
+/* ========================= */
+
+.btn-custom {
+
+  background-color: #7B2CBF !important;
+
+  color: white !important;
+
+  border: none !important;
+
+  margin-top: 25px;
+
+  width: 100%;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  transition: 0.3s;
+
+  font-size: 1.1rem;
+}
+
+.btn-custom:hover {
+
+  background-color: #5A189A !important;
+
+  transform: scale(1.02);
+}
+
+/* ========================= */
+/* LINKS */
+/* ========================= */
+
+a {
+
+  color: #9D4EDD;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+a:hover {
+
+  color: #C77DFF;
+}
+
+/* ========================= */
+/* TEXTO */
+/* ========================= */
+
+p {
+
+  text-align: center;
+
+  margin-top: 20px;
+
+  color: #ccc;
+}
+
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+  .login-box {
+
+    padding: 25px;
+  }
+
+  .login-box h2 {
+
+    font-size: 1.7rem;
+  }
+
+  .btn-custom {
+
+    font-size: 1rem;
+  }
+}

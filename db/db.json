@@ -1,0 +1,13 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Administrador",
+      "email": "admin@gmail.com",
+      "login": "admin",
+      "senha": "senha123",
+      "admin": true,
+      "favoritos": []
+    }
+  ]
+}

@@ -17,6 +17,15 @@ header {
   background-color: #0D0D0D;
 }
 
+.menu-header {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
 /* TÍTULOS */
 h1, h2, h3, h4 {
   color: #9D4EDD;

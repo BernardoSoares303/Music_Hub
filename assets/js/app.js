@@ -57,7 +57,7 @@ async function toggleFavorito(idMusica) {
     usuario.favoritos = [];
   }
 
-  idMusica = Number(idMusica);
+  idMusica = String(idMusica);
 
   const jaExiste =
     usuario.favoritos.includes(idMusica);
@@ -68,7 +68,7 @@ async function toggleFavorito(idMusica) {
 
     usuario.favoritos =
       usuario.favoritos.filter(
-        id => id !== idMusica
+        id => String(id) !== idMusica
       );
 
   } else {
@@ -162,7 +162,7 @@ async function carregarCards() {
 
     const favorito =
       usuario?.favoritos?.includes(
-        Number(m.id)
+        String(m.id)
       );
 
     return `
@@ -192,7 +192,7 @@ async function carregarCards() {
           : 'bi-heart'
         } favorito"
 
-                  onclick="toggleFavorito(${m.id})"
+                  onclick="toggleFavorito('${m.id}')"
                 ></i>
 
               ` : ""}

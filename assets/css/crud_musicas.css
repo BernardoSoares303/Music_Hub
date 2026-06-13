@@ -1,0 +1,75 @@
+body {
+
+    background-color: #111;
+}
+
+.titulo {
+
+    color: white;
+
+    font-size: 2.5rem;
+
+    font-weight: bold;
+
+    margin-bottom: 40px;
+}
+
+.form-musica {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    background-color: #1b1b1b;
+
+    padding: 30px;
+
+    border-radius: 16px;
+}
+
+.form-control {
+
+    background-color: #2a2a2a;
+
+    border: none;
+
+    color: white;
+}
+
+.form-control:focus {
+
+    background-color: #2a2a2a;
+
+    color: white;
+
+    box-shadow: none;
+}
+
+.crud-card {
+
+    background-color: #1b1b1b;
+
+    border: 1px solid #2d2d2d;
+
+    color: white;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+}
+
+.form-control::placeholder {
+
+    color: #bdbdbd;
+
+    opacity: 1;
+}
+
+.imagem-card {
+
+    height: 250px;
+
+    object-fit: cover;
+}

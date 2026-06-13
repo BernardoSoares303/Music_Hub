@@ -9,6 +9,28 @@ async function carregarIndex() {
   await carregarCards();
 
   await carregarDestaques();
+
+  await carregarCards();
+
+  await carregarDestaques();
+
+  // PEGA USUARIO LOGADO
+
+  const usuario = JSON.parse(
+    sessionStorage.getItem("usuarioLogado")
+  );
+
+  // BOTÃO CADASTRO
+
+  const btnCadastro =
+    document.getElementById("btnCadastro");
+
+  // ESCONDE SE NÃO FOR ADMIN
+
+  if (!usuario || !usuario.admin) {
+
+    btnCadastro.style.display = "none";
+  }
 }
 
 // =========================

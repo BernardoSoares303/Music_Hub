@@ -194,6 +194,17 @@ img {
   display: block;
 }
 
+.conteudo-musica {
+
+    white-space: pre-line;
+
+    word-break: break-word;
+
+    overflow: visible;
+
+    max-height: none;
+}
+
 /* FAVORITO */
 
 .favorito {

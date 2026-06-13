@@ -377,9 +377,11 @@ async function carregarDetalhe() {
       ${musica.ano}
     </p>
 
-    <p class="mt-3">
-      ${musica.conteudo}
-    </p>
+    <div class="mt-3 conteudo-musica">
+
+    ${musica.conteudo || "Sem conteúdo disponível."}
+
+    </div>
 
     <a 
       href="index.html" 

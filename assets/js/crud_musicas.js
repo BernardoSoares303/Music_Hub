@@ -96,14 +96,36 @@ form.addEventListener(
                     "artista"
                 ).value,
 
-            imagem:
-                document.getElementById(
-                    "imagem"
-                ).value,
-
             descricao:
                 document.getElementById(
                     "descricao"
+                ).value,
+
+            conteudo:
+                document.getElementById(
+                    "conteudo"
+                ).value,
+
+            genero:
+                document.getElementById(
+                    "genero"
+                ).value,
+
+            ano: Number(
+
+                document.getElementById(
+                    "ano"
+                ).value
+            ),
+
+            destaque:
+                document.getElementById(
+                    "destaque"
+                ).checked,
+
+            imagem:
+                document.getElementById(
+                    "imagem"
                 ).value
         };
 
@@ -189,6 +211,22 @@ async function editarMusica(id) {
     document.getElementById(
         "descricao"
     ).value = musica.descricao;
+    
+    document.getElementById(
+        "conteudo"
+    ).value = musica.conteudo;
+
+    document.getElementById(
+        "genero"
+    ).value = musica.genero;
+
+    document.getElementById(
+        "ano"
+    ).value = musica.ano;
+
+    document.getElementById(
+        "destaque"
+    ).checked = musica.destaque;
 
     window.scrollTo({
 
